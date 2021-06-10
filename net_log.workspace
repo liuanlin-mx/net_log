@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="net_log" Database="" Version="10000">
+  <Project Name="net_log" Path="net_log.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="win64" Selected="yes">
+      <Environment/>
+      <Project Name="net_log" ConfigName="win64"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="&lt;Edit...&gt;" Selected="no">
+      <Environment/>
+      <Project Name="net_log" ConfigName=""/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
