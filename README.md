@@ -1,6 +1,6 @@
 # net_log
 # 使用方法
-gcc -o server main.c
+gcc -o server main.cpp
 运行 server
 
 示例
