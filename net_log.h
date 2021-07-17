@@ -111,13 +111,13 @@ static inline void net_log_sendto(const char *log, int len)
 
 #ifndef NET_LOG_DISABLE_DEBUG
 #define net_log_debug(...) do { \
-    static char buf[8192]; \
-    int len = snprintf(buf, sizeof(buf), "D " NET_LOG_FLAG "%s:%s:%d ", net_log_filename(__FILE__), __FUNCTION__, __LINE__); \
-    if (len > 0) { \
-        int r = snprintf(buf + len, sizeof(buf) - len, ##__VA_ARGS__); \
-        if (r > 0) { \
-            net_log_sendto(buf, len + r); \
-            printf("%s", buf); \
+    static char __net_log_buf[8192]; \
+    int __net_log_len = snprintf(__net_log_buf, sizeof(__net_log_buf), "D " NET_LOG_FLAG "%s:%s:%d ", net_log_filename(__FILE__), __FUNCTION__, __LINE__); \
+    if (__net_log_len > 0) { \
+        int __net_log_r = snprintf(__net_log_buf + __net_log_len, sizeof(__net_log_buf) - __net_log_len, ##__VA_ARGS__); \
+        if (__net_log_r > 0) { \
+            net_log_sendto(__net_log_buf, __net_log_len + __net_log_r); \
+            printf("%s", __net_log_buf); \
         } \
     } \
 } while (0)
@@ -129,13 +129,13 @@ static inline void net_log_sendto(const char *log, int len)
 
 #ifndef NET_LOG_DISABLE_INFO
 #define net_log_info(...) do { \
-    static char buf[8192]; \
-    int len = snprintf(buf, sizeof(buf), "I " NET_LOG_FLAG "%s:%s:%d ", net_log_filename(__FILE__), __FUNCTION__, __LINE__); \
-    if (len > 0) { \
-        int r = snprintf(buf + len, sizeof(buf) - len, ##__VA_ARGS__); \
-        if (r > 0) { \
-            net_log_sendto(buf, len + r); \
-            printf("%s", buf); \
+    static char __net_log_buf[8192]; \
+    int __net_log_len = snprintf(__net_log_buf, sizeof(__net_log_buf), "I " NET_LOG_FLAG "%s:%s:%d ", net_log_filename(__FILE__), __FUNCTION__, __LINE__); \
+    if (__net_log_len > 0) { \
+        int __net_log_r = snprintf(__net_log_buf + __net_log_len, sizeof(__net_log_buf) - __net_log_len, ##__VA_ARGS__); \
+        if (__net_log_r > 0) { \
+            net_log_sendto(__net_log_buf, __net_log_len + __net_log_r); \
+            printf("%s", __net_log_buf); \
         } \
     } \
 } while (0)
@@ -149,13 +149,13 @@ static inline void net_log_sendto(const char *log, int len)
 
 #ifndef NET_LOG_DISABLE_ERR
 #define net_log_err(...) do { \
-    static char buf[8192]; \
-    int len = snprintf(buf, sizeof(buf), "E " NET_LOG_FLAG "%s:%s:%d ", net_log_filename(__FILE__), __FUNCTION__, __LINE__); \
-    if (len > 0) { \
-        int r = snprintf(buf + len, sizeof(buf) - len, ##__VA_ARGS__); \
-        if (r > 0) { \
-            net_log_sendto(buf, len + r); \
-            printf("%s", buf); \
+    static char __net_log_buf[8192]; \
+    int __net_log_len = snprintf(__net_log_buf, sizeof(__net_log_buf), "E " NET_LOG_FLAG "%s:%s:%d ", net_log_filename(__FILE__), __FUNCTION__, __LINE__); \
+    if (__net_log_len > 0) { \
+        int __net_log_r = snprintf(__net_log_buf + __net_log_len, sizeof(__net_log_buf) - __net_log_len, ##__VA_ARGS__); \
+        if (__net_log_r > 0) { \
+            net_log_sendto(__net_log_buf, __net_log_len + __net_log_r); \
+            printf("%s", __net_log_buf); \
         } \
     } \
 } while (0)
@@ -167,13 +167,13 @@ static inline void net_log_sendto(const char *log, int len)
 
 #ifndef NET_LOG_DISABLE_WARN
 #define net_log_warn(...) do { \
-    static char buf[8192]; \
-    int len = snprintf(buf, sizeof(buf), "W " NET_LOG_FLAG "%s:%s:%d ", net_log_filename(__FILE__), __FUNCTION__, __LINE__); \
-    if (len > 0) { \
-        int r = snprintf(buf + len, sizeof(buf) - len, ##__VA_ARGS__); \
-        if (r > 0) { \
-            net_log_sendto(buf, len + r); \
-            printf("%s", buf); \
+    static char __net_log_buf[8192]; \
+    int __net_log_len = snprintf(__net_log_buf, sizeof(__net_log_buf), "W " NET_LOG_FLAG "%s:%s:%d ", net_log_filename(__FILE__), __FUNCTION__, __LINE__); \
+    if (__net_log_len > 0) { \
+        int __net_log_r = snprintf(__net_log_buf + __net_log_len, sizeof(__net_log_buf) - __net_log_len, ##__VA_ARGS__); \
+        if (__net_log_r > 0) { \
+            net_log_sendto(__net_log_buf, __net_log_len + __net_log_r); \
+            printf("%s", __net_log_buf); \
         } \
     } \
 } while (0)
